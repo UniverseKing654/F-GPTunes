@@ -1,0 +1,11 @@
+.prompt-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.prompt-input{
+    margin: 1em;
+    padding: 0.5em;
+    width: 100%;
+}
