@@ -37,16 +37,48 @@ function App() {
             type='text' 
             placeholder='Describe tus gustos musicales' 
             className='prompt-input'
-            value={inputs.prompt || ""}
-            onChange={(e) => handleChange(e, "prompt")}
+            value={inputs.prompt1 || ""}
+            onChange={(e) => handleChange(e, "prompt1")}
+        />
+        <input 
+            type='text' 
+            placeholder='Menciona los generos musicales que te gustan' 
+            className='prompt-input'
+            value={inputs.prompt2 || ""}
+            onChange={(e) => handleChange(e, "prompt2")}
+        />
+        <input 
+            type='text' 
+            placeholder='Cuentanos tu estado de animo' 
+            className='prompt-input'
+            value={inputs.prompt3 || ""}
+            onChange={(e) => handleChange(e, "prompt3")}
+        />
+        <input 
+            type='text' 
+            placeholder='¿De que epoca prefieres tu musica?' 
+            className='prompt-input'
+            value={inputs.prompt4 || ""}
+            onChange={(e) => handleChange(e, "prompt4")}
+        />
+        <input 
+            type='text' 
+            placeholder='¿Cual es el tempo que mas te gusta' 
+            className='prompt-input'
+            value={inputs.prompt5 || ""}
+            onChange={(e) => handleChange(e, "prompt5")}
+        />
+        <input 
+            type='text' 
+            placeholder='¿En que idioma escuchas musica?' 
+            className='prompt-input'
+            value={inputs.prompt6 || ""}
+            onChange={(e) => handleChange(e, "prompt6")}
         />
         <button type="button" className="button" onClick={promptSubmit}>
             Inicia tu experiencia
         </button>
     </div>
-      <p className="read-the-docs">
-        La API de Chat GPT ta cara muchachos
-      </p>
       <p>{message}</p>
     </>
   )
