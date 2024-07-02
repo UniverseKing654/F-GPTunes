@@ -12,6 +12,7 @@
     justify-content: start;
     align-items: flex-start;
     padding-bottom: 2em;
+    width: 70em;
 }
 
 .prompt-descriptor{
@@ -20,13 +21,14 @@
 
 .prompt-input{
 
-    height: 3em;
+    height: 5em;
     padding: 1em;
     width: 100%;
     font-family: 'Inter';
     background-color: #44475A;
     border: none;
     border-radius: 3px;
+    box-sizing:border-box
     
 }
 
@@ -41,6 +43,17 @@
     color: #282A36;
     font-family: 'Inter';
     font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+#landing-page-button:hover{
+    background-color: #282A36;
+    color: #50FA7B;
+    border-color: #50FA7B;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 1.5em;
     margin-top: 1em;
 
 }
