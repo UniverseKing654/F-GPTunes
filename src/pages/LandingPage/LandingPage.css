@@ -17,6 +17,7 @@
 
 .prompt-descriptor{
     font-family: 'Inter';
+    font-size: 1.2em;
 }
 
 .prompt-input{
@@ -28,14 +29,15 @@
     background-color: #44475A;
     border: none;
     border-radius: 3px;
-    box-sizing:border-box
+    box-sizing:border-box;
+    font-size: 1em;
     
 }
 
 #landing-page-title{
     font-family: 'Inter';
     color: #50FA7B;
-    font-size: 4em;
+    font-size: 5em;
 }
 
 #landing-page-button{
@@ -44,7 +46,8 @@
     font-family: 'Inter';
     font-weight: bold;
     font-size: 1.5em;
-    margin-top: 1em;
+    margin-block: 1em;
+    margin-bottom: 2em;
 }
 
 #landing-page-button:hover{
@@ -56,4 +59,10 @@
     font-size: 1.5em;
     margin-top: 1em;
 
+}
+
+#error-message{
+    font-family: 'Inter';
+    color: #FF5555;
+    font-size: 1.3em;
 }

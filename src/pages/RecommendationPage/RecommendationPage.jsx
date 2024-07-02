@@ -8,13 +8,19 @@ function App() {
     const track = 'Bodys'
     const artist = 'Car Seat Headrest'
 
-    const {state} = useLocation()
+    let {state} = useLocation()
 
     const [songs, setSongs] = useState([])
 
     async function getSongs() {
 
         console.log("State:", state)
+        console.log("Type of state:", typeof state)
+
+        if (typeof state === 'string' || state instanceof String){
+            state = JSON.parse(state)
+            console.log("State parsed:", state)
+        }
 
         const token_res = await axios.post('https://accounts.spotify.com/api/token', {
             grant_type: 'client_credentials',
@@ -29,9 +35,9 @@ function App() {
 
             const response = await axios.get('https://api.spotify.com/v1/search', { params: 
                     {
-                        q:  `track: ${song['cancion']} artist: ${song['artista']}`,
+                        q:  `track: ${song['cancion']} artist: ${song['artista']} album: ${song['album']}`,
                         type: 'track',
-                        access_token: token_res.data.access_token,
+                        access_token: token_res.data.access_token,  
                     }
                 }, {
                     headers: {

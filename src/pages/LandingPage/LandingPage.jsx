@@ -12,6 +12,7 @@ function App() {
 
   const handleChange = (e, inputName) => {
     setInputs({...inputs, [inputName]: e.target.value})
+    setMessage('')
   }
 
   const promptSubmit = async () => {
@@ -26,7 +27,15 @@ function App() {
         console.log(error)
         setMessage(error.response.data.error.message)
     })
-}
+    }
+
+    const pressButton = (e) => {
+        if (inputs.prompt === undefined || inputs.prompt === ''){ 
+            setMessage('Por favor describe tus gustos musicales')
+            return
+        }
+        promptSubmit()
+    }
 
   return (
     <>
@@ -92,11 +101,12 @@ function App() {
                 onChange={(e) => handleChange(e, "language")}
             />
         </div>
-        <button type="button" id='landing-page-button' onClick={promptSubmit}>
+        <p id='error-message'>{message}</p>
+        <button type="button" id='landing-page-button' onClick={pressButton}>
             Inicia tu experiencia
         </button>
     </div>
-      <p>{message}</p>
+      
     </>
   )
 }
