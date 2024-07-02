@@ -1,17 +1,32 @@
+.prompts-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #50FA7B;
+}
+
 .prompt-container{
     align-items: center;
     display: flex;
     flex-direction: column;
-    
+    justify-content: start;
+    align-items: flex-start;
+    padding-bottom: 2em;
+}
+
+.prompt-descriptor{
+    font-family: 'Inter';
 }
 
 .prompt-input{
-    margin: 1em;
+
+    height: 3em;
     padding: 1em;
     width: 100%;
     font-family: 'Inter';
     background-color: #44475A;
     border: none;
+    border-radius: 3px;
     
 }
 

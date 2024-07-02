@@ -1,31 +1,65 @@
-.prompt-container{
-    align-items: center;
+.song-card{
     display: flex;
-    flex-direction: column;
-    
-}
-
-.prompt-input{
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     margin: 1em;
     padding: 1em;
+    border-radius: 8px;
     width: 100%;
-    font-family: 'Inter';
     background-color: #44475A;
-    border: none;
-    
 }
 
-#landing-page-title{
+.song-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.text-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 4em;
+    width: 100%;
+
+}
+
+.album-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.song-cover{
+    margin-left: 4em;
+}
+
+.artist-name{
     font-family: 'Inter';
-    color: #50FA7B;
-    font-size: 4em;
+    font-style: italic;
 }
 
-#landing-page-button{
-    background-color: #50FA7B;
-    color: #282A36;
+.song-name{
     font-family: 'Inter';
     font-weight: bold;
-    margin-top: 1em;
+}
 
+.song-index{
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 3em;
+    margin-left: 1em;
+}
+
+.song-info-text{
+    font-family: 'Inter';
+    font-size: 2em;
+}
+
+.album-info-text{
+    font-family: 'Inter';
+    font-size: 1.5em;
+    font-weight: normal;
 }

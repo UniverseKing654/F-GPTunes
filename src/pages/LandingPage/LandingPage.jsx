@@ -20,7 +20,7 @@ function App() {
     then((response) => {
         console.log(response)
         setMessage(response.data)
-        //navigate('/recommendation')
+        navigate('/recommendation', { state: response.data})
         })
     .catch((error) => {
         console.log(error)
@@ -31,49 +31,67 @@ function App() {
   return (
     <>
       <h1 id='landing-page-title'>GPTunes</h1>
-      <div id='prompt-container'>
-        <input 
-            type='text' 
-            placeholder='Describe tus gustos musicales' 
-            className='prompt-input'
-            value={inputs.prompt || ""}
-            onChange={(e) => handleChange(e, "prompt")}
-        />
-        <input 
-            type='text' 
-            placeholder='Menciona los generos musicales que te gustan' 
-            className='prompt-input'
-            value={inputs.genre || ""}
-            onChange={(e) => handleChange(e, "genre")}
-        />
-        <input 
-            type='text' 
-            placeholder='Cuentanos tu estado de animo' 
-            className='prompt-input'
-            value={inputs.mood || ""}
-            onChange={(e) => handleChange(e, "mood")}
-        />
-        <input 
-            type='text' 
-            placeholder='¿De que epoca prefieres tu musica?' 
-            className='prompt-input'
-            value={inputs.time || ""}
-            onChange={(e) => handleChange(e, "time")}
-        />
-        <input 
-            type='text' 
-            placeholder='¿Cual es el tempo que mas te gusta' 
-            className='prompt-input'
-            value={inputs.bpm || ""}
-            onChange={(e) => handleChange(e, "bpm")}
-        />
-        <input 
-            type='text' 
-            placeholder='¿En que idioma escuchas musica?' 
-            className='prompt-input'
-            value={inputs.language || ""}
-            onChange={(e) => handleChange(e, "language")}
-        />
+      <div id='prompts-container'>
+        <div className='prompt-container'>
+            <p className='prompt-descriptor'>Describe tus gustos musicales* (Obligatorio)</p>
+            <input 
+                type='text' 
+                placeholder='Ej: Me gusta la musica energetica para bailar' 
+                className='prompt-input'
+                value={inputs.prompt || ""}
+                onChange={(e) => handleChange(e, "prompt")}
+            />
+        </div>
+        <div className='prompt-container'>
+            <p className='prompt-descriptor'>Menciona los generos musicales que te gustan</p>
+            <input 
+                type='text' 
+                placeholder='Ej; Rock, Pop, Reggaeton, etc.' 
+                className='prompt-input'
+                value={inputs.genre || ""}
+                onChange={(e) => handleChange(e, "genre")}
+            />
+        </div>
+        <div className='prompt-container'>
+            <p className='prompt-descriptor'>Cuentanos tu estado de animo</p>
+            <input 
+                type='text' 
+                placeholder='Ej: Triste, feliz, emocionado, etc.' 
+                className='prompt-input'
+                value={inputs.mood || ""}
+                onChange={(e) => handleChange(e, "mood")}
+            />
+        </div>
+        <div className='prompt-container'>
+            <p className='prompt-descriptor'>¿De que epoca prefieres tu musica?</p>
+            <input 
+                type='text' 
+                placeholder='Ej: 80s, 90s, 2000s, etc.' 
+                className='prompt-input'
+                value={inputs.time || ""}
+                onChange={(e) => handleChange(e, "time")}
+            />
+        </div>
+        <div className='prompt-container'>
+            <p className='prompt-descriptor'>¿Cual es el tempo que mas te gusta?</p>
+            <input 
+                type='text' 
+                placeholder='Ej: Rapido, lento, medio, etc.' 
+                className='prompt-input'
+                value={inputs.bpm || ""}
+                onChange={(e) => handleChange(e, "bpm")}
+            />
+        </div>
+        <div className='prompt-container'>
+            <p className='prompt-descriptor'>¿En que idioma escuchas musica?</p>
+            <input 
+                type='text' 
+                placeholder='Ej: Español, Ingles, Frances, etc.' 
+                className='prompt-input'
+                value={inputs.language || ""}
+                onChange={(e) => handleChange(e, "language")}
+            />
+        </div>
         <button type="button" id='landing-page-button' onClick={promptSubmit}>
             Inicia tu experiencia
         </button>
